@@ -706,6 +706,15 @@ section {
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
+
+.investor {
+  text-align: center;
+}
+
+.investor>img {
+  max-width: 250px;
+}
+
 .services .service-item {
   padding: 40px;
   background: #fff;
@@ -1219,13 +1228,15 @@ section {
 .about ul li {
   padding: 5px 0;
   display: flex;
-  align-items: center;
+  align-items: top;
 }
 
 .about ul i {
   font-size: 20px;
   margin-right: 4px;
   color: var(--color-primary);
+  position: relative;
+  bottom: 0.15em;
 }
 
 .about .watch-video i {
