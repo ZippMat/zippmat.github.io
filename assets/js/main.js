@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileNavHide = document.querySelector('.mobile-nav-hide');
 
   document.querySelectorAll('.mobile-nav-toggle').forEach(el => {
-    el.addEventListener('click', function(event) {
+    el.addEventListener('click', function (event) {
       event.preventDefault();
       mobileNavToogle();
     })
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navDropdowns = document.querySelectorAll('.navbar .dropdown > a');
 
   navDropdowns.forEach(el => {
-    el.addEventListener('click', function(event) {
+    el.addEventListener('click', function (event) {
       if (document.querySelector('.mobile-nav-active')) {
         event.preventDefault();
         this.classList.toggle('active');
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   const scrollTop = document.querySelector('.scroll-top');
   if (scrollTop) {
-    const togglescrollTop = function() {
+    const togglescrollTop = function () {
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
     window.addEventListener('load', togglescrollTop);
@@ -118,8 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       let menuFilters = document.querySelectorAll('.portfolio-isotope .portfolio-flters li');
-      menuFilters.forEach(function(el) {
-        el.addEventListener('click', function() {
+      menuFilters.forEach(function (el) {
+        el.addEventListener('click', function () {
           document.querySelector('.portfolio-isotope .portfolio-flters .filter-active').classList.remove('filter-active');
           this.classList.add('filter-active');
           portfolioIsotope.arrange({
@@ -210,4 +210,51 @@ document.addEventListener('DOMContentLoaded', () => {
     aos_init();
   });
 
+});
+
+
+
+const form = document.querySelector("form");
+form.addEventListener("submit", (event) => {
+  // prevent the form submit from refreshing the page
+  event.preventDefault();
+
+  console.log("form submitted!")
+  form.querySelector('.sent-message').classList.add('d-block');
+
+  const { name, email, phone, message } = event.target;
+
+  // Use your API endpoint URL you copied from the previous step
+  const endpoint =
+    "https://wkq4tpzky7.execute-api.ap-south-1.amazonaws.com/default/sendContactEmail";
+  // We use JSON.stringify here so the data can be sent as a string via HTTP
+  const body = JSON.stringify({
+    body: {
+      name: name.value,
+      email: email.value,
+      phone: phone.value,
+      message: message.value
+    }
+  });
+  const requestOptions = {
+    method: "POST",
+    body,
+    headers: {
+      "Content-Type": "application/json",
+    }
+  };
+
+  fetch(endpoint, requestOptions)
+    .then((response) => {
+      if (!response.ok) throw new Error("Error in fetch");
+      return response.json();
+    })
+    .then((response) => {
+      form.querySelector('.sent-message').classList.add('d-block');
+      form.reset();
+    })
+    .catch((error) => {
+      document.getElementById("result-text").innerText =
+        "An unkown error occured.";
+    });
 });
