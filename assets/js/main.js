@@ -226,7 +226,7 @@ form.addEventListener("submit", (event) => {
 
   // Use your API endpoint URL you copied from the previous step
   const endpoint =
-    "https://wkq4tpzky7.execute-api.ap-south-1.amazonaws.com/default/sendContactEmail";
+    "https://contact.zippmat.in/sendContactEmail";
   // We use JSON.stringify here so the data can be sent as a string via HTTP
   const body = JSON.stringify({
     body: {
