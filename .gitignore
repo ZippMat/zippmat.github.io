@@ -1,0 +1,15 @@
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Visual Studio Code
+.vscode/
+.history/*
+
+# System files
+.DS_Store
+Thumbs.db
+
+.dccache
