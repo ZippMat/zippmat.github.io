@@ -44,7 +44,7 @@ a {
 }
 
 a:hover {
-  color: #ffc732;
+  color: rgb(22,70,135);
   text-decoration: none;
 }
 
@@ -194,7 +194,11 @@ section {
 }
 
 .scroll-top:hover {
-  background: #ffc732;
+  background: rgb(22,70,135);
+  color: #fff;
+}
+
+.scroll-top:hover i {
   color: #fff;
 }
 
