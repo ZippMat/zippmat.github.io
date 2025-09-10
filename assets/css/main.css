@@ -2747,7 +2747,28 @@ section {
     z-index: 1000;
 }
 
-.side-button {
+.side-button-sell {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    background: darkblue;
+    color: white;
+    padding: 12px 8px;
+    border-radius: 0px 8px 8px 0px;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.3s;
+    white-space: nowrap;
+    width: fit-content;
+    font-size: 16px;
+}
+
+.side-button-sell:hover {
+    transform: scale(1.1) rotate(180deg);
+    background: #45a379;
+    color: white;
+}
+
+.side-button-enquiry {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     background: var(--color-primary);
@@ -2762,7 +2783,7 @@ section {
     font-size: 16px;
 }
 
-.side-button:hover {
+.side-button-enquiry:hover {
     transform: scale(1.1) rotate(180deg);
     background: rgb(22,70,135);
     color: white;
