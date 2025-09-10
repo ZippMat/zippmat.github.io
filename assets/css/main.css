@@ -2733,7 +2733,58 @@ section {
   font-size: 24px;
 }
 
-/* Adjust scroll-top button position to avoid overlap */
 .scroll-top-ekobar {
-  bottom: 150px;
+    bottom: 150px;
+}
+
+.side-buttons {
+    position: fixed;
+    top: 60%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.side-button-sell {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    background: darkblue;
+    color: white;
+    padding: 12px 8px;
+    border-radius: 0px 8px 8px 0px;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.3s;
+    white-space: nowrap;
+    width: fit-content;
+    font-size: 16px;
+}
+
+.side-button-sell:hover {
+    transform: scale(1.1) rotate(180deg);
+    background: #45a379;
+    color: white;
+}
+
+.side-button-enquiry {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    background: var(--color-primary);
+    color: white;
+    padding: 12px 8px;
+    border-radius: 0px 8px 8px 0px;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.3s;
+    white-space: nowrap;
+    width: fit-content;
+    font-size: 16px;
+}
+
+.side-button-enquiry:hover {
+    transform: scale(1.1) rotate(180deg);
+    background: rgb(22,70,135);
+    color: white;
 }
