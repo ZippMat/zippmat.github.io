@@ -1,0 +1,30 @@
+@import url('main.css');
+
+/* ------------------------------
+   Shop page layout only
+   ------------------------------ */
+html, body {
+  height: 100%;
+  background: #fff;
+}
+
+/* Ensure the embedded app (iframe) is responsive and can grow */
+#main {
+  overflow: visible;
+}
+
+#main iframe {
+  display: block;
+  width: 100%;
+  height: auto;       /* allow growth beyond the minimum */
+  min-height: 70vh;   /* baseline height */
+  border: 0;
+}
+
+/* Utility: make iframe fill the viewport height when desired */
+@supports (height: 100dvh) {
+  #main iframe.fill-viewport { min-height: 100dvh; }
+}
+@supports not (height: 100dvh) {
+  #main iframe.fill-viewport { min-height: 100vh; }
+}
