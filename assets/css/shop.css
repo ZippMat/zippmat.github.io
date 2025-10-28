@@ -21,6 +21,29 @@ html, body {
   border: 0;
 }
 
+/* Responsive iframe sizing and centering */
+.iframe-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.responsive-iframe {
+  width: 60%;
+  max-width: 1200px;
+  min-width: 320px;
+  height: 70vh; /* adjust if you want shorter/taller */
+  border: 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .responsive-iframe {
+    width: 80%;
+    height: 50vh;
+  }
+}
+
 /* Utility: make iframe fill the viewport height when desired */
 @supports (height: 100dvh) {
   #main iframe.fill-viewport { min-height: 100dvh; }
