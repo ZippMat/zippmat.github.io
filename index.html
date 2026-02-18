@@ -140,6 +140,21 @@
   </head>
 
   <body>
+    <!-- event popup modal (remove after promo week) -->
+    <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-0">
+            <!-- replace the src with your image path -->
+            <img src="assets/img/marketing/ici-concrete-deminar-2026.jpeg" class="img-fluid" alt="Event" />
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- ======= Header ======= -->
     <header
       id="header"
@@ -903,5 +918,19 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <!-- script to automatically show the event popup on page load -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var modalEl = document.getElementById('eventModal');
+        if (modalEl) {
+          var myModal = new bootstrap.Modal(modalEl, {
+            backdrop: true, // close when clicking outside
+            keyboard: true  // close on ESC key
+          });
+          myModal.show();
+        }
+      });
+    </script>
   </body>
 </html>
