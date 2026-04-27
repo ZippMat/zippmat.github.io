@@ -903,5 +903,11 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <script>
+      document.querySelector('.php-email-form').addEventListener('submit', function() {
+        this.querySelector('button[type="submit"]').style.display = 'none';
+      });
+    </script>
   </body>
 </html>
